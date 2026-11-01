@@ -13,8 +13,13 @@
 
 ## 安装
 
+在 Magpie 里打开 **插件 → 发现 → 非官方**，就能看到 **Strata Local**（仓库带 `magpie-plugin`
+topic，magpie 直接列 GitHub 上打了这个标签的仓库，不需要 npm 包）。点安装后照常
+`magpie plugin login strata-local`，密钥随便填（例如 `local`），本地服务不校验。
+
+命令行安装同理：
+
 ```bash
-# 从 GitHub 安装（不需要 npm 发布）
 magpie plugin add github:ColoristSansi/magpie-strata-local
 magpie plugin login strata-local      # 密钥随便填（例如 local），本地服务不校验
 ```
