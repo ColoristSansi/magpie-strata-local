@@ -1,0 +1,9 @@
+node_modules/
+*.tgz
+.magpie-strata-cli.json
+.magpie-strata-owned.json
+.start-result.json
+.plugin-json.json
+.redact-test.txt
+.DS_Store
+Thumbs.db

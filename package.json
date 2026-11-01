@@ -1,0 +1,68 @@
+{
+  "name": "magpie-strata-local",
+  "version": "0.1.0",
+  "description": "Strata 本地模型（Qwen3.8-Flash-Next）的 Magpie 插件：自动启停本地服务，并把 Chat / Messages / Responses 三个座位注册成供应商 strata",
+  "type": "module",
+  "main": "./index.mjs",
+  "exports": {
+    "./server": "./index.mjs",
+    ".": "./index.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "lib",
+    "README.md",
+    "assets"
+  ],
+  "keywords": [
+    "magpie",
+    "magpie-plugin",
+    "opencode-plugin",
+    "strata",
+    "local-llm"
+  ],
+  "license": "MIT",
+  "author": "ColoristSansi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ColoristSansi/magpie-strata-local.git"
+  },
+  "homepage": "https://github.com/ColoristSansi/magpie-strata-local#readme",
+  "bugs": {
+    "url": "https://github.com/ColoristSansi/magpie-strata-local/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "magpie": {
+    "name": "Strata 本地模型",
+    "icon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1' y='1' width='30' height='30' rx='8' fill='%230f172a'/%3E%3Cpath d='M8 22.5 16 8l8 14.5' stroke='%2338bdf8' stroke-width='2.2' fill='none' stroke-linejoin='round'/%3E%3Cpath d='M11.5 18.5h9' stroke='%2322d3ee' stroke-width='2.2' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='8' r='2.2' fill='%2334d399'/%3E%3C/svg%3E",
+    "maxConcurrency": 2,
+    "options": {
+      "autoStart": true,
+      "idleStopMinutes": 30,
+      "port": 18777,
+      "model": "q2_0",
+      "context": "256k",
+      "vision": "on",
+      "tune": "skip",
+      "access": "local",
+      "apiModelId": "strata",
+      "seats": {
+        "chat": true,
+        "messages": true,
+        "responses": true
+      },
+      "requestWaitMs": 25000,
+      "startTimeoutMs": 300000,
+      "stopTimeoutMs": 90000,
+      "maxConcurrency": 2,
+      "discover": true,
+      "portCandidates": [
+        18777,
+        8080
+      ],
+      "scanDepth": 4
+    }
+  }
+}
